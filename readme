@@ -1,0 +1,22 @@
+# Love Maths
+
+Love Maths is a simple browser-based arithmetic game for practising addition, subtraction, multiplication, and division. Questions use randomly generated numbers, and the game keeps a running count of correct and incorrect answers.
+
+## How to play
+
+1. Open `index.html` in a web browser. No installation or build step is required.
+2. Choose an operation using one of the four buttons.
+3. Enter your answer in the answer box and select **Submit Answer**. You can also press **Enter**.
+4. The game checks your answer, updates the score, and shows another question for the selected operation.
+
+Addition starts automatically when the page loads. Subtraction questions put the larger number first to avoid negative results.
+
+## Project files
+
+- `index.html` — game page and interface
+- `Assets/css/style.css` — layout, colours, buttons, and responsive styles
+- `Assets/js/script.js` — question generation, answer checking, and scores
+- `Assets/images/logo.png` — page logo
+- `favicon5.ico` — browser tab icon
+
+The page loads Font Awesome icons and Google Fonts from external services, so those assets require an internet connection.
