@@ -158,3 +158,28 @@ function calculateCorrectAnswer() {
     }
 
 } // End of calculateCorrectAnswer function
+
+// ==================================================
+// PART 5: SCORE — Keep track of right and wrong answers
+// ==================================================
+
+/**
+ * Gets the current score from the DOM and increments it by 1
+ */
+function incrementScore() {
+    // Read current score from screen
+    let oldScore = parseInt(document.getElementById("score").innerText);
+    // Add 1 and write new score back to screen
+    // ++ BEFORE = increase first, then use the new value
+    document.getElementById("score").innerText = ++oldScore;
+}
+
+/**
+ * Gets the current tally of incorrect answers from the DOM and increments it by 1
+ */
+function incrementWrongAnswer() {
+    // Read current wrong count from screen
+    let oldScore = parseInt(document.getElementById("incorrect").innerText);
+    // Add 1 and write back
+    document.getElementById("incorrect").innerText = ++oldScore;
+}
