@@ -183,3 +183,41 @@ function incrementWrongAnswer() {
     // Add 1 and write back
     document.getElementById("incorrect").innerText = ++oldScore;
 }
+
+// ==================================================
+// PART 6: DISPLAY QUESTIONS — Show numbers + symbol on screen
+// ==================================================
+
+// Show ADDITION question
+function displayAdditionQuestion(operand1, operand2) {
+    // Put first number in position 1
+    document.getElementById('operand1').textContent = operand1;
+    // Put second number in position 2
+    document.getElementById('operand2').textContent = operand2;
+    // Set operator to plus sign
+    document.getElementById('operator').textContent = "+";
+}
+
+// Show SUBTRACTION question
+function displaySubtractQuestion(operand1, operand2) {
+    // Always put the BIGGER number first so we don't get negative answers
+    document.getElementById("operand1").textContent = Math.max(operand1, operand2);
+    // Always put the SMALLER number second
+    document.getElementById("operand2").textContent = Math.min(operand1, operand2);
+    // Set operator to minus sign
+    document.getElementById("operator").textContent = "-";
+}
+
+// Show MULTIPLICATION question
+function displayMultiplyQuestion(operand1, operand2) {
+    document.getElementById('operand1').textContent = operand1;
+    document.getElementById('operand2').textContent = operand2;
+    document.getElementById('operator').textContent = "x";
+}
+
+// Show DIVISION question ✨ NEW
+function displayDivisionQuestion(operand1, operand2) {
+    document.getElementById("operand1").textContent = operand1;
+    document.getElementById("operand2").textContent = operand2;
+    document.getElementById("operator").textContent = "/";
+}
