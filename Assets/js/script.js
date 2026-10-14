@@ -83,3 +83,40 @@ function runGame(gameType) {
         throw `Unknown game type: ${gameType}. Aborting!`;
     }
 } // End of runGame function
+
+// ==================================================
+// PART 3: CHECK ANSWER — Compare user's answer vs correct one
+// ==================================================
+
+/**
+ * Checks the answer against the first element in
+ * the returned calculateCorrectAnswer array
+ */
+function checkAnswer() {
+
+    // Get what the user TYPED, turn it from TEXT → NUMBER
+    let userAnswer = parseInt(document.getElementById("answer-box").value);
+
+    // Call function to work out what the CORRECT answer is
+    let calculatedAnswer = calculateCorrectAnswer();
+
+    // Compare: is user's answer equal to correct answer? true or false
+    let isCorrect = userAnswer === calculatedAnswer[0];
+
+    // If answer was RIGHT...
+    if (isCorrect) {
+        alert("Hey! You got it right! :D");
+        // Increase score by 1
+        incrementScore();
+    } 
+    // If answer was WRONG...
+    else {
+        alert(`Awwww.... you answered ${userAnswer}. The correct answer was ${calculatedAnswer[0]}!`);
+        // Increase wrong answer count by 1
+        incrementWrongAnswer();
+    }
+
+    // Automatically start a NEW question of the SAME game type
+    runGame(calculatedAnswer[1]);
+
+} // End of checkAnswer function
