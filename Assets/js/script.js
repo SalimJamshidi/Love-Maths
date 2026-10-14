@@ -120,3 +120,41 @@ function checkAnswer() {
     runGame(calculatedAnswer[1]);
 
 } // End of checkAnswer function
+
+// ==================================================
+// PART 4: CALCULATE ANSWER — Do the actual math!
+// ==================================================
+
+/**
+ * Gets the operands (the numbers) and the operator (+, -, x, /)
+ * directly from the DOM, and returns the correct answer.
+ */
+function calculateCorrectAnswer() {
+
+    // Read the FIRST NUMBER from the screen, convert to number
+    let operand1 = parseInt(document.getElementById('operand1').innerText);
+    // Read the SECOND NUMBER from the screen, convert to number
+    let operand2 = parseInt(document.getElementById('operand2').innerText);
+    // Read the OPERATOR symbol from the screen (+, -, x, /)
+    let operator = document.getElementById("operator").innerText;
+
+    // Do the math based on WHICH operator we see
+    if (operator === "+") {
+        // Add the numbers, return answer + game type
+        return [operand1 + operand2, "addition"];
+    } else if (operator === "x") {
+        // Multiply the numbers
+        return [operand1 * operand2, "multiply"];
+    } else if (operator === "-") {
+        // Subtract second number from first number
+        return [operand1 - operand2, "subtract"];
+    } else if (operator === "/") {
+        // Divide first number by second number ✨ NEW
+        return [operand1 / operand2, "division"];
+    } else {
+        // Unknown operator = something went wrong
+        alert(`Unimplemented operator ${operator}`);
+        throw `Unimplemented operator ${operator}. Aborting!`;
+    }
+
+} // End of calculateCorrectAnswer function
